@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My data</title>
+    <meta charset="UTF-8">
+    <title>For You - Login</title>
+    <link rel="stylesheet" href="login style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- พื้นหลังหัวใจเคลื่อน -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 6000);
+        }
+        setInterval(createHeart, 400);
+    </script>
+
+    <!-- กล่อง Login ของคุณ -->
+    <div class="login-box">
+        <h1>Log in ❤️</h1>
+        <form id="login">
+            <label for="text">name</label>
+            <input type="text" id="username" placeholder="ชื่อเล่นและนามสกุล" required>
+
+            <label for="password">password</label>
+            <input type="password" id="password" placeholder="รหัสสำคัญ" required>
+
+            <input type="submit" value="login">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('login').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            let user = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+
+            if (user === "Queen Chanakhot" && pass === "281266") {
+                window.location.href = "home.html";
+            
+            } else if (user !== "Queen Chanakhot" && pass === "281266") {
+                alert("ชื่อเล่นและนามสกุลไม่ถูกต้อง");
+            
+            } else if (user === "Queen Chanakhot" && pass !== "281266") {
+                alert("รหัสสำคัญไม่ถูกต้อง");
+            
+            } else {
+                alert("ชื่อเล่นและนามสกุล และ รหัสสำคัญไม่ถูกต้อง");
+            }
+        });
+    </script>
+
+</body>
+</html>

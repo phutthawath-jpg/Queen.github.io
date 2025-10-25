@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    background-color: #ffe6ec;
+}
+
+/* พื้นหลังหัวใจเคลื่อนที่ */
+.heart {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: pink;
+    transform: rotate(45deg);
+    animation: floatUp 6s infinite ease-in;
+    opacity: 0.7;
+}
+.heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: pink;
+    border-radius: 50%;
+}
+.heart::before { top: -10px; left: 0; }
+.heart::after { left: -10px; top: 0; }
+
+@keyframes floatUp {
+    0% { transform: translateY(100vh) rotate(45deg); opacity: 1; }
+    100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
+}
+
+/* กล่อง Login */
+.login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0px 0px 15px rgba(255, 100, 150, 0.5);
+    width: 90%;
+    max-width: 350px;
+}
+
+h1 {
+    font-family: 'Parisienne', cursive;
+    font-size: 32px;
+    color: #ff5c8d;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-left: 5%;
+    color: #ff5c8d;
+    font-weight: 500;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ffb6c1;
+    border-radius: 15px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #ff5c8d;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 10px 0;
+    width: 95%;
+}
+
+input[type="submit"]:hover {
+    background-color: #ff2e63;
+    box-shadow: 0 0 15px rgba(255, 94, 147, 0.7), 0 0 30px rgba(255, 94, 147, 0.5);
+    transform: scale(1.05);
+}
+
+/* ปรับสำหรับมือถือ */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    input[type="submit"] {
+        font-size: 15px;
+        padding: 8px 0;
+    }
+
+    .login-box {
+        padding: 20px 15px;
+        width: 95%;
+    }
+}
