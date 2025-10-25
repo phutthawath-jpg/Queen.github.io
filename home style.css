@@ -1,0 +1,206 @@
+ body {
+      margin: 0;
+      font-family: 'Prompt', sans-serif;
+      background: linear-gradient(180deg, #ff4f9b 0%, #ff89c0 100%);
+      color: #fff;
+      text-align: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    h1 {
+      margin-top: 60px;
+      font-size: 3rem;
+      letter-spacing: 2px;
+      animation: fadeInDown 1.5s ease;
+    }
+
+    .small-light-text {
+      font-size: 18px;
+      font-weight: 300;
+      color: #fff9fc;
+      margin: 20px auto 40px;
+      max-width: 85%;
+      line-height: 1.6em;
+      animation: fadeIn 2s ease;
+    }
+
+    /* 🖼 จัดระเบียบรูปภาพให้เรียงสวย */
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto 40px;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    .image-grid img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.25);
+      transition: transform 0.5s ease, box-shadow 0.3s ease;
+    }
+
+    .image-grid img:hover {
+      transform: scale(1.1) rotate(3deg);
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.4);
+    }
+
+    /* 🔗 ปุ่มน่ารัก */
+    a {
+      display: inline-block;
+      color: #ff4f9b;
+      background-color: #fff;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    a:hover {
+      background-color: #ffe1ef;
+      transform: scale(1.05);
+    }
+
+    /* 📋 รายการข้อความ */
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 30px;
+    }
+
+    ul li {
+      font-size: 18px;
+      margin: 8px 0;
+      animation: slideUp 1s ease forwards;
+      opacity: 0;
+    }
+
+    ul li:nth-child(1) { animation-delay: 0.3s; }
+    ul li:nth-child(2) { animation-delay: 0.6s; }
+    ul li:nth-child(3) { animation-delay: 0.9s; }
+
+    /* 💞 เอฟเฟกต์หัวใจลอย */
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hearts span {
+      position: absolute;
+      display: block;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 18px;
+      animation: floatHearts 8s linear infinite;
+    }
+
+    @keyframes floatHearts {
+      0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1);
+        opacity: 0;
+      }
+    }
+
+    /* ✨ Animation effects */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .music-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.8);
+      color: #ff4f9b;
+      border: none;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      font-size: 22px;
+      cursor: pointer;
+      transition: all 0.3s;
+      z-index: 5;
+    }
+
+    .music-btn:hover {
+      background: #fff;
+      transform: scale(1.1);
+    }
+
+    /* 📱 Responsive */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      .small-light-text {
+        font-size: 16px;
+      }
+      .image-grid img {
+        width: 90px;
+        height: 90px;
+      }
+      a {
+        padding: 10px 18px;
+        font-size: 15px;
+      }
+      .music-player {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.music-player iframe {
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+}.music-link {
+  display: inline-block;
+  margin-top: 30px;
+  background: #fff;
+  color: #ff4f9b;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+  transition: all 0.3s;
+}
+.music-link:hover {
+  background: #ffe1ef;
+  transform: scale(1.05);
+}
+    }

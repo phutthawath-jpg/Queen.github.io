@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my girlfriend</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home style.css">
+</head>
+<body>
+   <div class="hearts"></div>
+
+  <div class="header">
+    <h1>HAPPY ANNIVERSARY</h1>
+    <p class="small-light-text">
+      สุขสันต์วันครบรอบนะครับ 2 ปีแล้วน่ะ เรามีความสุขมากๆเลยที่ได้มีเธอ ขอบคุณที่รักเราน่ะคะ 
+      อยู่ด้วยกันไปนานๆน่ะ ขอโทษที่ทำตัวไม่ดีไปบางครั้งนะ รักเทอที่สุดเลย ❤️❤️❤️
+    </p>
+  </div>
+  <div class="image-grid">
+    <img src="C:\Users\Lenovo\OneDrive\รูปภาพ\New folder\566535977_1100497015242622_3680327768109981365_n.jpg" alt="heart" />
+    <img src="C:\Users\Lenovo\OneDrive\รูปภาพ\New folder\566544049_1882357262709480_325160240234080447_n.jpg" alt="heart" />
+    <img src="C:\Users\Lenovo\OneDrive\รูปภาพ\New folder\566512425_1391203875628713_9159964618238460778_n.jpg" alt="heart" />
+    <img src="C:\Users\Lenovo\OneDrive\รูปภาพ\New folder\566579958_1313243590545992_2163551031010627911_n.jpg" alt="heart" />
+    <img src="C:\Users\Lenovo\OneDrive\รูปภาพ\New folder\567264377_4447848945446589_3803596944856815767_n.jpg" alt="heart" />
+    <img src="C:\Users\Lenovo\OneDrive\รูปภาพ\New folder\568731504_674041355753646_4794095961174438466_n.webp" alt="heart" />
+  </div>
+  <a href="https://forms.gle/i4Mo8JdDEP8ruHWWA">แบบทดสอบความสัมพันธ์</a>
+  <ul>
+    <li>🎯 เกณฑ์: ต้องได้ 7 คะแนนขึ้น ถึงจะผ่าน</li>
+    <li>💗 ทำได้ครั้งเดียว</li>
+    <li>🙏 ถ้าตกมีบทลงโทษนะจ๊ะ</li>
+  </ul>
+   <!-- 🎵 เพลงจาก YouTube -->
+  <a href="https://www.youtube.com/watch?v=OYPiXBIgvJ8" 
+   target="_blank" 
+   class="music-link">❤️ เพลงที่มอบให้เทอ ❤️</a>
+
+  <!-- สคริปต์สุ่มหัวใจลอย -->
+  <script>
+    const hearts = document.querySelector('.hearts');
+    const symbols = ['💖', '💘', '💝', '💗', '💕', '❤️'];
+    function createHeart() {
+      const span = document.createElement('span');
+      span.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+      span.style.left = Math.random() * 100 + '%';
+      span.style.fontSize = Math.random() * 55 + 35 + 'px';
+      span.style.animationDuration = Math.random() * 3 + 6 + 's';
+      hearts.appendChild(span);
+      setTimeout(() => span.remove(), 9000);
+    }
+    setInterval(createHeart, 500);
+    const music = document.getElementById('bgMusic');
+    const btn = document.getElementById('musicToggle');
+    let playing = true;
+    </script>
+</body>
+</html>
